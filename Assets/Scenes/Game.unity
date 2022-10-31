@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -7, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -246,9 +246,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1392528260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca29ff901797a3242947cc6232d070fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 0982f5f5105a7c141b8a614bfe5a6da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 15
-  columns: 15
-  tileSize: 1
+  gridScriptableObject: {fileID: 11400000, guid: 8ab5917f41f7fba4cacb39a6bfcd90f4, type: 2}
+  prefabs:
+  - {fileID: 4369778439660716400, guid: 66698409b825a9f49b2532e9211203de, type: 3}
+  - {fileID: 3585140495256268274, guid: 325accfb19ed7d24f9fef3f5946af072, type: 3}
+  prefabWater: {fileID: 6356918759678871598, guid: dd19ceca333682f428a6f05636f095f6, type: 3}
+  prefabHealthyTree: {fileID: 2887411699203420187, guid: 8f8778746f08f544a88c7cc4133d920a, type: 3}
+  prefabDryTree: {fileID: 8774017612349507053, guid: ef3cfa4d8f926dc4cb6387f882027844, type: 3}
+  prefabMountains: {fileID: 4369778439660716400, guid: 66698409b825a9f49b2532e9211203de, type: 3}
