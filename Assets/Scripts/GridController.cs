@@ -7,18 +7,19 @@ public class GridController : MonoBehaviour
     public Grid<GameObject> gameObjectsGrid;
     public GridScriptableObject gridScriptableObject;
 
-    public GameObject[] prefabs;
     public GameObject prefabWater;
     public GameObject prefabHealthyTree;
     public GameObject prefabDryTree;
     public GameObject prefabMountains;
+
+    public float magnification = 7.0f;
+    public int moveNoise;
 
     private int width, height;
     private int offsetX = 0;
     private int offsetY = 0;
 
     private float cellSize;
-    private float magnification = 7.0f;
 
     private Vector3 originPosition;
 
@@ -61,7 +62,7 @@ public class GridController : MonoBehaviour
 
             for (int y = 0; y < this.height; y++)
             {
-                int tileId = GetIdUsingPerlin(x, y);
+                int tileId = GetIdUsingPerlin(x + moveNoise, y + moveNoise);
                 noiseGrid[x].Add(tileId);
                 CreateTile(tileId, x, y);
             }
@@ -100,8 +101,6 @@ public class GridController : MonoBehaviour
     {
         GameObject tilePrefab = tileSet[tileId];
         GameObject tile = Instantiate(tilePrefab, grid.GetWorldPosition(x, y), Quaternion.identity);
-
-        //tile.transform.localPosition = new Vector3(x, y, 0); + (Vector3)Vector2.one * cellSize / 2
 
         tileGrid[x].Add(tile);
     }
