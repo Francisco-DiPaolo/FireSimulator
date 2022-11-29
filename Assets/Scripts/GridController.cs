@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class GridController : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class GridController : MonoBehaviour
     public GameObject prefabHealthyTree;
     public GameObject prefabDryTree;
     public GameObject prefabMountains;
+    public GameObject prefabFire;
 
-    public float magnification = 7.0f;
-    public int moveNoise;
+    public Slider sliderNoiseMap;
+    public Slider sliderAgglomeration;
+
+    public float moveNoise;
+    public float agglomeration;
 
     private int width, height;
     private int offsetX = 0;
@@ -30,17 +35,30 @@ public class GridController : MonoBehaviour
     List<List<int>> noiseGrid = new List<List<int>>();
     List<List<GameObject>> tileGrid = new List<List<GameObject>>();
 
-    void Awake()
+    public void Awake()
+    {
+        SetGrid();
+    }
+
+    private void Update()
+    {
+        moveNoise = sliderNoiseMap.value;
+        agglomeration = sliderAgglomeration.value;
+    }
+
+    public void SetScriptableObject(GridScriptableObject newScriptableObject)
+    {
+        gridScriptableObject = newScriptableObject;
+    }
+
+    public void GenerateGridBtn()
     {
         SetGrid();
 
         grid = new Grid<int>(width, height, cellSize, originPosition);
 
         gameObjectsGrid = new Grid<GameObject>(width, height, cellSize, originPosition);
-    }
 
-    private void Start()
-    {
         CreateTileset();
         if (!gridStarted) InitializeGrids();
     }
@@ -62,7 +80,7 @@ public class GridController : MonoBehaviour
 
             for (int y = 0; y < this.height; y++)
             {
-                int tileId = GetIdUsingPerlin(x + moveNoise, y + moveNoise);
+                int tileId = GetIdUsingPerlin(x + ((int)moveNoise), y + ((int)moveNoise));
                 noiseGrid[x].Add(tileId);
                 CreateTile(tileId, x, y);
             }
@@ -82,10 +100,9 @@ public class GridController : MonoBehaviour
 
     int GetIdUsingPerlin(int x, int y)
     {
-
         float rawPerlin = Mathf.PerlinNoise(
-            (x - offsetX) / magnification,
-            (y - offsetY) / magnification
+            (x - offsetX) / agglomeration,
+            (y - offsetY) / agglomeration
         );
         float clampPerlin = Mathf.Clamp01(rawPerlin);
         float scaledPerlin = clampPerlin * tileSet.Count;
@@ -99,9 +116,15 @@ public class GridController : MonoBehaviour
 
     void CreateTile(int tileId, int x, int y)
     {
-        GameObject tilePrefab = tileSet[tileId];
-        GameObject tile = Instantiate(tilePrefab, grid.GetWorldPosition(x, y), Quaternion.identity);
+        if (!gridStarted)
+        {
+            GameObject tilePrefab = tileSet[tileId];
+            GameObject tile = Instantiate(tilePrefab, grid.GetWorldPosition(x, y), Quaternion.identity);
 
-        tileGrid[x].Add(tile);
+            tilePrefab.transform.localScale = gridScriptableObject.gameObjectSize;
+            prefabFire.transform.localScale = gridScriptableObject.gameObjectSize;
+
+            tileGrid[x].Add(tile);
+        }
     }
 }
