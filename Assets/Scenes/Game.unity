@@ -720,7 +720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 241880828}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1946610416810693712, guid: d899926c8f71b3346a74b8527a270446, type: 3}
+        m_TargetAssemblyTypeName: FireBehavior, Assembly-CSharp
+        m_MethodName: StartFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &241880828
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3216572677779969738}
   - component: {fileID: 1037964939120371110}
   - component: {fileID: 3801467407977090209}
+  - component: {fileID: 1946610416810693712}
   m_Layer: 0
   m_Name: TileFire
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6722783526966326725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e083d16d926cb4e83cd175c0a8b241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  typeTerrain: fire
 --- !u!61 &3801467407977090209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,3 +124,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1946610416810693712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722783526966326725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e393d425c9a744ab026802399b5b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _terrains: []
+  fireTerrain: {fileID: 6722783526966326725}
