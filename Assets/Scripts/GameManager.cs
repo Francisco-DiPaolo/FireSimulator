@@ -7,4 +7,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void StartFire()
+    {
+        BehaviorFire[] fires = FindObjectsOfType<BehaviorFire>();
+
+        foreach (var obj in fires)
+        {
+            obj.StartFire();
+        }
+    }
 }

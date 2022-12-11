@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8406009944031803418}
   - component: {fileID: 3216572677779969738}
-  - component: {fileID: 1037964939120371110}
   - component: {fileID: 3801467407977090209}
-  - component: {fileID: 1946610416810693712}
+  - component: {fileID: 7387545405046421824}
   m_Layer: 0
-  m_Name: TileFire
+  m_Name: TileFireDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 676ca38dd07ca4446bf91e52052d0236, type: 3}
-  m_Color: {r: 1, g: 0.49445593, b: 0.19339621, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6cff03beb96d0f04d86f08c52dfedff5, type: 3}
+  m_Color: {r: 0.8980392, g: 0.44313726, b: 0.15686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1037964939120371110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6722783526966326725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e083d16d926cb4e83cd175c0a8b241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typeTerrain: fire
 --- !u!61 &3801467407977090209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1946610416810693712
+--- !u!114 &7387545405046421824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,8 +119,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6722783526966326725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e393d425c9a744ab026802399b5b6b, type: 3}
+  m_Script: {fileID: 11500000, guid: f8ea05f9653290644bd55451330d4ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _terrains: []
-  fireTerrain: {fileID: 6722783526966326725}
+  gridController: {fileID: 0}
+  gameManager: {fileID: 0}
+  terrain: []
+  animatorFire: {fileID: 0}
+  fireTerrain: {fileID: 6722783526966326725, guid: c74b5dd7888209a4097090d90f873049, type: 3}
+  fireRight: {fileID: 6722783526966326725, guid: d899926c8f71b3346a74b8527a270446, type: 3}
+  fireLeft: {fileID: 6722783526966326725, guid: 11b65f2b9e911d7478a838e359e387cb, type: 3}
+  fireUp: {fileID: 6722783526966326725, guid: 51aee071ec13b4941b170f6d589d6fcf, type: 3}
+  fireDown: {fileID: 6722783526966326725}
+  fireRightWater: {fileID: 6722783526966326725, guid: 9d739fd5cea6cb345be799a4ecaa9029, type: 3}
+  fireLeftWater: {fileID: 6722783526966326725, guid: 63635e9efb1c22249b1a82607530d7bb, type: 3}
+  fireUpWater: {fileID: 6722783526966326725, guid: bb70d950dd6d98944bd89ffc10dcf25e, type: 3}
+  fireDownWater: {fileID: 6722783526966326725, guid: 170a3d6786f2b6a49b97ab43a7a21eec, type: 3}
+  timeDisplacement: 2
+  terrainsList: []
+  typeFire: FireDown

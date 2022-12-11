@@ -12,7 +12,12 @@ public class GridController : MonoBehaviour
     public GameObject prefabHealthyTree;
     public GameObject prefabDryTree;
     public GameObject prefabMountains;
+
     public GameObject prefabFire;
+    public GameObject prefabFireRight;
+    public GameObject prefabFireLeft;
+    public GameObject prefabFireDown;
+    public GameObject prefabFireUp;
 
     public Slider sliderNoiseMap;
     public Slider sliderAgglomeration;
@@ -123,6 +128,10 @@ public class GridController : MonoBehaviour
 
             tilePrefab.transform.localScale = gridScriptableObject.gameObjectSize;
             prefabFire.transform.localScale = gridScriptableObject.gameObjectSize;
+            prefabFireRight.transform.localScale = gridScriptableObject.gameObjectSize;
+            prefabFireLeft.transform.localScale = gridScriptableObject.gameObjectSize;
+            prefabFireUp.transform.localScale = gridScriptableObject.gameObjectSize;
+            prefabFireDown.transform.localScale = gridScriptableObject.gameObjectSize;
 
             tileGrid[x].Add(tile);
         }

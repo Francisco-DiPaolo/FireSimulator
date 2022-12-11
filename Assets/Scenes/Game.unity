@@ -721,8 +721,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1946610416810693712, guid: d899926c8f71b3346a74b8527a270446, type: 3}
-        m_TargetAssemblyTypeName: FireBehavior, Assembly-CSharp
+      - m_Target: {fileID: 712529223}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartFire
         m_Mode: 1
         m_Arguments:
@@ -4697,7 +4697,11 @@ MonoBehaviour:
   prefabHealthyTree: {fileID: 2887411699203420187, guid: 8f8778746f08f544a88c7cc4133d920a, type: 3}
   prefabDryTree: {fileID: 8774017612349507053, guid: ef3cfa4d8f926dc4cb6387f882027844, type: 3}
   prefabMountains: {fileID: 4369778439660716400, guid: 66698409b825a9f49b2532e9211203de, type: 3}
-  prefabFire: {fileID: 6722783526966326725, guid: d899926c8f71b3346a74b8527a270446, type: 3}
+  prefabFire: {fileID: 6722783526966326725, guid: c74b5dd7888209a4097090d90f873049, type: 3}
+  prefabFireRight: {fileID: 6722783526966326725, guid: d899926c8f71b3346a74b8527a270446, type: 3}
+  prefabFireLeft: {fileID: 6722783526966326725, guid: 11b65f2b9e911d7478a838e359e387cb, type: 3}
+  prefabFireDown: {fileID: 6722783526966326725, guid: 7873f9204560c3f41bd0619a3e491002, type: 3}
+  prefabFireUp: {fileID: 6722783526966326725, guid: 51aee071ec13b4941b170f6d589d6fcf, type: 3}
   sliderNoiseMap: {fileID: 639524689}
   sliderAgglomeration: {fileID: 1644158529}
   moveNoise: 0
@@ -4947,7 +4951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889fce69d229d2043b04eac8e47122c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireTerrain: {fileID: 6722783526966326725, guid: d899926c8f71b3346a74b8527a270446, type: 3}
+  fireTerrain: {fileID: 6722783526966326725, guid: c74b5dd7888209a4097090d90f873049, type: 3}
   waterTerrain: {fileID: 6356918759678871598, guid: dd19ceca333682f428a6f05636f095f6, type: 3}
   treeTerrain: {fileID: 2887411699203420187, guid: 8f8778746f08f544a88c7cc4133d920a, type: 3}
   dryTreeTerrain: {fileID: 8774017612349507053, guid: ef3cfa4d8f926dc4cb6387f882027844, type: 3}

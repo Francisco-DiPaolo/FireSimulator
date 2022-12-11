@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8774017612349507053
+--- !u!1 &6722783526966326725
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5775770823585122354}
-  - component: {fileID: 588848646128969442}
-  - component: {fileID: 3091750742858765710}
-  - component: {fileID: 2396883212717263107}
+  - component: {fileID: 8406009944031803418}
+  - component: {fileID: 3216572677779969738}
+  - component: {fileID: 3801467407977090209}
+  - component: {fileID: 7387545405046421824}
   m_Layer: 0
-  m_Name: TileDryTree
+  m_Name: TileFireRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5775770823585122354
+--- !u!4 &8406009944031803418
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774017612349507053}
+  m_GameObject: {fileID: 6722783526966326725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &588848646128969442
+--- !u!212 &3216572677779969738
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774017612349507053}
+  m_GameObject: {fileID: 6722783526966326725}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 676ca38dd07ca4446bf91e52052d0236, type: 3}
-  m_Color: {r: 0.735849, g: 0.64624095, b: 0.5449448, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6cff03beb96d0f04d86f08c52dfedff5, type: 3}
+  m_Color: {r: 0.8980392, g: 0.44313726, b: 0.15686275, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,26 +84,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3091750742858765710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774017612349507053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e083d16d926cb4e83cd175c0a8b241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typeTerrain: dryTree
---- !u!61 &2396883212717263107
+--- !u!61 &3801467407977090209
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8774017612349507053}
+  m_GameObject: {fileID: 6722783526966326725}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -123,3 +110,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7387545405046421824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6722783526966326725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8ea05f9653290644bd55451330d4ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridController: {fileID: 0}
+  gameManager: {fileID: 0}
+  terrain: []
+  animatorFire: {fileID: 0}
+  fireTerrain: {fileID: 6722783526966326725, guid: c74b5dd7888209a4097090d90f873049, type: 3}
+  fireRight: {fileID: 6722783526966326725}
+  fireLeft: {fileID: 6722783526966326725, guid: 11b65f2b9e911d7478a838e359e387cb, type: 3}
+  fireUp: {fileID: 6722783526966326725, guid: 51aee071ec13b4941b170f6d589d6fcf, type: 3}
+  fireDown: {fileID: 6722783526966326725, guid: 7873f9204560c3f41bd0619a3e491002, type: 3}
+  fireRightWater: {fileID: 6722783526966326725, guid: 9d739fd5cea6cb345be799a4ecaa9029, type: 3}
+  fireLeftWater: {fileID: 6722783526966326725, guid: 63635e9efb1c22249b1a82607530d7bb, type: 3}
+  fireUpWater: {fileID: 6722783526966326725, guid: bb70d950dd6d98944bd89ffc10dcf25e, type: 3}
+  fireDownWater: {fileID: 6722783526966326725, guid: 170a3d6786f2b6a49b97ab43a7a21eec, type: 3}
+  timeDisplacement: 2
+  terrainsList: []
+  typeFire: FireRight

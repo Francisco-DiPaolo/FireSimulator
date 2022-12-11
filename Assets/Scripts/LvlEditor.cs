@@ -4,8 +4,8 @@ public class LvlEditor : MonoBehaviour
 {
     [SerializeField] GameObject fireTerrain, waterTerrain, treeTerrain, dryTreeTerrain, mountainTerrain;
 
-    private GameObject _objectActual;
-    private int _number;
+    private GameObject objectActual;
+    private int number;
 
     void Update()
     {
@@ -15,27 +15,27 @@ public class LvlEditor : MonoBehaviour
 
     public void ChangeNumberBtn(int numberBtn)
     {
-        _number = numberBtn;
+        number = numberBtn;
     }
 
     private void TipeObject()
     {
-        switch (_number)
+        switch (number)
         {
             case 0:
-                _objectActual = fireTerrain;
+                objectActual = fireTerrain;
                 break;
             case 1:
-                _objectActual = waterTerrain;
+                objectActual = waterTerrain;
                 break;
             case 2:
-                _objectActual = treeTerrain;
+                objectActual = treeTerrain;
                 break;
             case 3:
-                _objectActual = dryTreeTerrain;
+                objectActual = dryTreeTerrain;
                 break;
             case 4:
-                _objectActual = mountainTerrain;
+                objectActual = mountainTerrain;
                 break;
             default:
                 break;
@@ -56,7 +56,7 @@ public class LvlEditor : MonoBehaviour
                 {
                     Vector3 position = hit.transform.position;
                     Destroy(hit.collider.gameObject);
-                    Instantiate(_objectActual, position, Quaternion.identity);
+                    Instantiate(objectActual, position, Quaternion.identity);
                 }
             }
         }
