@@ -51,6 +51,39 @@ public class BehaviorFire : MonoBehaviour
 
     public void AssignTileGrid()
     {
+        {
+            terrainsList.Clear();
+
+            foreach (var obj in terrain)
+            {
+                if (obj.gameObject.activeInHierarchy)
+                {
+                    if (transform.position.x - cellSize == obj.transform.position.x && transform.position.y == obj.transform.position.y)
+                    {
+                        terrainsList.Add(obj);
+                    }
+
+                    if (transform.position.x + cellSize == obj.transform.position.x && transform.position.y == obj.transform.position.y)
+                    {
+                        terrainsList.Add(obj);
+                    }
+
+                    if (transform.position.y + cellSize == obj.transform.position.y && transform.position.x == obj.transform.position.x)
+                    {
+                        terrainsList.Add(obj);
+                    }
+
+                    if (transform.position.y - cellSize == obj.transform.position.y && transform.position.x == obj.transform.position.x)
+                    {
+                        terrainsList.Add(obj);
+                    }
+                }
+            }
+        }
+    }
+
+    /*public void AssignTileGrid()
+    {
         terrainsList.Clear();
 
         foreach (var obj in terrain)
@@ -90,7 +123,7 @@ public class BehaviorFire : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     public IEnumerator Displacement(float time, float timeTree)
     {
@@ -102,75 +135,28 @@ public class BehaviorFire : MonoBehaviour
             {
                 if (transform.position.x - cellSize == terrainsList[i].transform.position.x && transform.position.y == terrainsList[i].transform.position.y)
                 {
-                    if (terrainsList[i].typeTerrain == "water")
-                    {
-                        InstantiateFire(fireLeftWater, i);
-                    }
-                    else
-                    {
-                        InstantiateFire(fireLeft, i);
-                    }
-
-                    /*if (terrainsList[i].typeTerrain == "tree")
-                    {
-                        InstantiateFire(fireLeft, i);
-                        yield return new WaitForSeconds(timeTree);
-
-                        animatorFire.SetBool("boolFire", true);
-                    }*/
+                    InstantiateFire(fireTerrain, i);
                 }
                 else if (transform.position.x + cellSize == terrainsList[i].transform.position.x && transform.position.y == terrainsList[i].transform.position.y)
                 {
-                    if (terrainsList[i].typeTerrain == "water")
-                    {
-
-                        InstantiateFire(fireRightWater, i);
-                        
-                    }
-                    else
-                    {
-                        InstantiateFire(fireRight, i);
-                    }
-
-                    /*if (terrainsList[i].typeTerrain == "tree")
-                    {
-                        InstantiateFire(fireRight, i);
-                        yield return new WaitForSeconds(timeTree);
-
-                        animatorFire.SetBool("boolFire", true);
-                    }*/
+                    InstantiateFire(fireTerrain, i);
                 }
                 else if (transform.position.y - cellSize == terrainsList[i].transform.position.y && transform.position.x == terrainsList[i].transform.position.x)
                 {
-                    if (terrainsList[i].typeTerrain == "water")
-                    {
-                        InstantiateFire(fireDownWater, i);
-                        
-                    }
-                    else
-                    {
-                        InstantiateFire(fireDown, i);
-                    }
-
-
-                    /*if (terrainsList[i].typeTerrain == "tree")
-                    {
-                        
-                        yield return new WaitForSeconds(timeTree);
-
-                        animatorFire.SetBool("boolFire", true);
-                    }*/
+                    InstantiateFire(fireTerrain, i);
                 }
                 else if (transform.position.y + cellSize == terrainsList[i].transform.position.y && transform.position.x == terrainsList[i].transform.position.x)
                 {
-                    if (terrainsList[i].typeTerrain == "water")
+                    InstantiateFire(fireTerrain, i);
+
+                    /*if (terrainsList[i].typeTerrain == "water")
                     {
                         InstantiateFire(fireUpWater, i);
                     }
                     else
                     {
                         InstantiateFire(fireUp, i);
-                    }
+                    }*/
 
                     /*if (terrainsList[i].typeTerrain == "tree")
                     {

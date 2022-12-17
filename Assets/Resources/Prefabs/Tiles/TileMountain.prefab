@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1531408766646684847}
   - component: {fileID: 5569548009550832255}
-  - component: {fileID: 6569777754575757857}
   - component: {fileID: 2441072083200799389}
+  - component: {fileID: 6569777754575757857}
+  - component: {fileID: -4519205367921904109}
   m_Layer: 0
   m_Name: TileMountain
   m_TagString: Untagged
@@ -84,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6569777754575757857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4369778439660716400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e083d16d926cb4e83cd175c0a8b241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typeTerrain: mountain
 --- !u!61 &2441072083200799389
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,3 +111,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6569777754575757857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369778439660716400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e083d16d926cb4e83cd175c0a8b241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeTerrain: mountain
+  typeAfterBurned: mountain
+  gridController: {fileID: 0}
+  gameManager: {fileID: 0}
+  terrains: []
+  animatorFire: {fileID: -4519205367921904109}
+  colorFire: {r: 0.8584906, g: 0.4044954, b: 0.21462265, a: 1}
+  timeDisplacement: 10
+  timeVerifyType: 0.5
+  timeBurnedTerrain: 15
+  terrainsList: []
+--- !u!95 &-4519205367921904109
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369778439660716400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 190b26c38d0ba0c43b04050991e3f78f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
