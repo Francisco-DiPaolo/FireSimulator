@@ -14,10 +14,6 @@ public class GridController : MonoBehaviour
     public GameObject prefabMountains;
 
     public GameObject prefabFire;
-    public GameObject prefabFireRight;
-    public GameObject prefabFireLeft;
-    public GameObject prefabFireDown;
-    public GameObject prefabFireUp;
 
     public Slider sliderNoiseMap;
     public Slider sliderAgglomeration;
@@ -63,6 +59,8 @@ public class GridController : MonoBehaviour
         grid = new Grid<int>(width, height, cellSize, originPosition);
 
         gameObjectsGrid = new Grid<GameObject>(width, height, cellSize, originPosition);
+
+        SetTileSize();
 
         CreateTileset();
         if (!gridStarted) InitializeGrids();
@@ -127,13 +125,17 @@ public class GridController : MonoBehaviour
             GameObject tile = Instantiate(tilePrefab, grid.GetWorldPosition(x, y), Quaternion.identity);
 
             tilePrefab.transform.localScale = gridScriptableObject.gameObjectSize;
-            prefabFire.transform.localScale = gridScriptableObject.gameObjectSize;
-            prefabFireRight.transform.localScale = gridScriptableObject.gameObjectSize;
-            prefabFireLeft.transform.localScale = gridScriptableObject.gameObjectSize;
-            prefabFireUp.transform.localScale = gridScriptableObject.gameObjectSize;
-            prefabFireDown.transform.localScale = gridScriptableObject.gameObjectSize;
 
             tileGrid[x].Add(tile);
         }
+    }
+
+    void SetTileSize()
+    {
+        prefabFire.transform.localScale = gridScriptableObject.gameObjectSize;
+        prefabWater.transform.localScale = gridScriptableObject.gameObjectSize;
+        prefabHealthyTree.transform.localScale = gridScriptableObject.gameObjectSize;
+        prefabDryTree.transform.localScale = gridScriptableObject.gameObjectSize;
+        prefabMountains.transform.localScale = gridScriptableObject.gameObjectSize;
     }
 }
