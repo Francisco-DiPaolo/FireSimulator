@@ -130,7 +130,7 @@ MonoBehaviour:
   terrains: []
   animatorFire: {fileID: -2027930262818118632}
   colorFire: {r: 0.85882354, g: 0.40784314, b: 0.21568628, a: 1}
-  timeDisplacement: 2
+  timeDisplacement: 0.2
   timeVerifyType: 0.5
   timeBurnedTerrain: 0.2
   terrainsList: []

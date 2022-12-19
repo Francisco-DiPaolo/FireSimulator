@@ -113,11 +113,14 @@ public class Terrain : MonoBehaviour
     public IEnumerator TimeToInstantiate(int index, float time)
     {
         yield return new WaitForSeconds(time);
-
-        if (terrainsList[index].typeTerrain != "water")
+        
+        if(typeTerrain != "coal")
         {
-            terrainsList[index].gameObject.GetComponent<SpriteRenderer>().color = colorFire;
-            terrainsList[index].typeTerrain = "fire";
+            if (terrainsList[index].typeTerrain != "water" && terrainsList[index].typeTerrain != "coal")
+            {
+                terrainsList[index].gameObject.GetComponent<SpriteRenderer>().color = colorFire;
+                terrainsList[index].typeTerrain = "fire";
+            }
         }
     }
 
@@ -125,7 +128,7 @@ public class Terrain : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        if ((typeTerrain == "fire"))
+        if (typeTerrain == "fire")
         {
             terrains = FindObjectsOfType<Terrain>();
             AssignTileGrid();
@@ -137,5 +140,11 @@ public class Terrain : MonoBehaviour
         {
             StartCoroutine(VerifyTypeTerrain(time, timeBurnedTerrain));
         }
+    }
+
+    public void ChangeTypeToCoal()
+    {
+        typeTerrain = "coal";
+        
     }
 }
