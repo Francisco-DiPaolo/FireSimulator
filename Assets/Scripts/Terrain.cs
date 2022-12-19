@@ -16,7 +16,6 @@ public class Terrain : MonoBehaviour
 
     public float timeDisplacement;
     public float timeVerifyType;
-    public float timeBurnedTerrain;
 
     [SerializeField] List<Terrain> terrainsList;
 
@@ -46,7 +45,7 @@ public class Terrain : MonoBehaviour
             animatorFire.SetBool("boolFire", true);
         }
 
-        StartCoroutine(VerifyTypeTerrain(timeVerifyType, timeBurnedTerrain));
+        StartCoroutine(VerifyTypeTerrain(timeVerifyType));
     }
 
     public void AssignTileGrid()
@@ -124,7 +123,7 @@ public class Terrain : MonoBehaviour
         }
     }
 
-    public IEnumerator VerifyTypeTerrain(float time, float timeBurnedTerrain)
+    public IEnumerator VerifyTypeTerrain(float time)
     {
         yield return new WaitForSeconds(time);
 
@@ -138,13 +137,12 @@ public class Terrain : MonoBehaviour
         }
         else
         {
-            StartCoroutine(VerifyTypeTerrain(time, timeBurnedTerrain));
+            StartCoroutine(VerifyTypeTerrain(time));
         }
     }
 
     public void ChangeTypeToCoal()
     {
         typeTerrain = "coal";
-        
     }
 }

@@ -40,7 +40,7 @@ public class GridController : MonoBehaviour
     List<List<int>> noiseGrid = new List<List<int>>();
     List<List<GameObject>> tileGrid = new List<List<GameObject>>();
 
-    public void Awake()
+    public void Start()
     {
         SetGrid();
     }
